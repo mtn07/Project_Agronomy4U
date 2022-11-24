@@ -75,6 +75,7 @@ function MenuNavigator() {
       <MenuNavigation.Screen name="AlertPage" component={AlertPage}/>
       <MenuNavigation.Screen name="Weather" component={Weather}/>
       <MenuNavigation.Screen name="ContactDev" component={ContactDev}/>
+      <MenuNavigation.Screen name="ShowInfoHelp" component={ShowInfoHelp}/>
     </MenuNavigation.Navigator>
   );
 }
@@ -126,6 +127,7 @@ function MainNavigator() {
       <MainNavigation.Screen name="News" component={NewsWebsite}/>
       <MainNavigation.Screen name="Contact" component={Contact}/>
       <MainNavigation.Screen name="ShowInfo" component={Showinfo}/>
+      <MainNavigation.Screen name="ShowInfoHelp" component={ShowInfoHelp}/>
     </MainNavigation.Navigator>
   );
 }

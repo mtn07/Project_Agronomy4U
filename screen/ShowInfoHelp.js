@@ -15,7 +15,7 @@ const ShowInfoHelp = ({ route}) => {
         return (
         <ScrollView>
             <View style={styles.gridItem1}>
-            <Text style={{textAlign: "center", fontSize: 20, marginTop: 10}}><b>{disease}</b></Text>
+            <Text style={{textAlign: "center", fontSize: 20, marginTop: 10}}><b>{name}</b></Text>
             <Image style={styles.pic} source={{uri: pic}}></Image>
             </View>
             <View style={styles.gridItem}>
