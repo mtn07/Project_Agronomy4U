@@ -53,7 +53,7 @@ const PtFromD2 = ({navigation}) => {
     bookmark) => {
     const updateBookmarkDoc = firebase
       .firestore()
-      .collection("Flowerers")
+      .collection("Fruits")
       .doc(key);
     updateBookmarkDoc
       .set({
@@ -72,7 +72,7 @@ const PtFromD2 = ({navigation}) => {
   }
 
   useEffect(() => {
-    const fruitCollection = firebase.firestore().collection("Flowerer");
+    const fruitCollection = firebase.firestore().collection("Fruits");
     const unsubscribe = fruitCollection.onSnapshot(getCollection);
     return () => {
       unsubscribe();

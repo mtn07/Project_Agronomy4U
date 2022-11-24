@@ -121,7 +121,7 @@ const BookMark = ({navigation}) => {
           return (
             
             <TouchableOpacity style={styles.gridItem} key={i} 
-            onPress={()=>{navigation.navigate("ข้อมูล", 
+            onPress={()=>{navigation.navigate("ShowInfo", 
             {key:item.key, 
             name:item.name,
             disease: item.disease,

@@ -7,7 +7,7 @@ export default function App() {
     <View style={styles.container}>
       <TouchableOpacity style={styles.box1} 
       onPress={() => {
-              Linking.openURL("http://www.ppsf.doae.go.th/wordpress/?page_id=2597");
+              Linking.openURL("http://water.rid.go.th/flood/flood/daily.pdf");
             }}>
         <View style={styles.l1}>
           <FontAwesome5
@@ -20,16 +20,13 @@ export default function App() {
           <Text
             style={styles.txt}
             onPress={() => {
-              Linking.openURL("http://www.ppsf.doae.go.th/wordpress/?page_id=2597");
+              Linking.openURL("http://water.rid.go.th/flood/flood/daily.pdf");
             }}
           >
             รายการสรุปสถานการณ์น้ำรายวัน 
           </Text>
           <Text
             style={styles.call}
-            onPress={() => {
-              Linking.openURL(`tel:02-9406190`);
-            }}
           >
             จากกรมชลประทาน
           </Text>
@@ -37,7 +34,7 @@ export default function App() {
       </TouchableOpacity>
       <TouchableOpacity style={styles.box2}
                   onPress={() => {
-                    Linking.openURL("https://www.doa.go.th/plprotect/?page_id=43");
+                    Linking.openURL("https://www.ryt9.com/tag/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%80%E0%B8%81%E0%B8%A9%E0%B8%95%E0%B8%A3");
                   }}>
         <View style={styles.l1}>
           <FontAwesome5
@@ -53,9 +50,6 @@ export default function App() {
           </Text>
           <Text
             style={styles.call}
-            onPress={() => {
-              Linking.openURL(`tel:02-579-8540`);
-            }}
           >
             จากเว็บไซต์ RYT9
           </Text>
@@ -65,7 +59,7 @@ export default function App() {
       <TouchableOpacity style={styles.box3}
       onPress={() => {
         Linking.openURL(
-          "https://www.dnp.go.th/FOREMIC/WEB%20SITE2/rba_info.php"
+          "https://www.thairath.co.th/tags/%E0%B8%A7%E0%B8%B1%E0%B8%8A%E0%B8%9E%E0%B8%B7%E0%B8%8A"
         );
       }}>
         <View style={styles.l1}>
@@ -82,9 +76,6 @@ export default function App() {
           </Text>
           <Text
             style={styles.call}
-            onPress={() => {
-              Linking.openURL(`tel:083-3554545`);
-            }}
           >
             จาก ไทยรัฐ ออนไลน์
           </Text>

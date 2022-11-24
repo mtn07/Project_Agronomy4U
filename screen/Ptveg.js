@@ -13,7 +13,7 @@ import firebase from "../database/firebaseDB";
 
 
 
-const Pthelp = ({navigation}) => {
+const Ptveg = ({navigation}) => {
   
   const [fruit_list, setfruit_list] = useState([]);
   const [filtered_list, setfiltered_list] = useState([]);
@@ -22,16 +22,16 @@ const Pthelp = ({navigation}) => {
   const getCollection = (querySnapshot) => {
     const all_data = [];
     querySnapshot.forEach((res) => {
-      const { name, appearance, pic, sci_name, time, benefit, type, bookmark } =
+      const { name, disease, pic, cause, symptom, prevention, type, bookmark } =
         res.data();
       all_data.push({
         key: res.id,
         name,
-        appearance,
+        disease,
         pic,
-        sci_name,
-        time,
-        benefit,
+        cause,
+        symptom,
+        prevention,
         type,
         bookmark,
       });
@@ -44,28 +44,28 @@ const Pthelp = ({navigation}) => {
   }
 
   const updateBookmark = (key,
-        name,
-        appearance,
-        pic,
-        sci_name,
-        time,
-        benefit,
-        type,
+    name,
+    disease,
+    cause,
+    symptom,
+    prevention,
+    type,
+    pic,
     bookmark) => {
     const updateBookmarkDoc = firebase
       .firestore()
-      .collection("Microbes")
+      .collection("Vegetable")
       .doc(key);
     updateBookmarkDoc
       .set({
         name: name,
-        appearance: appearance,
-        pic: pic,
-        sci_name: sci_name,
-        time: time,
-        benefit: benefit,
+        disease: disease,
+        cause: cause,
+        symptom: symptom,
+        prevention: prevention,
         type: type,
         bookmark: !bookmark,
+        pic: pic,
       })
       .then(() => {
         console.log("update success!");
@@ -73,7 +73,7 @@ const Pthelp = ({navigation}) => {
   }
 
   useEffect(() => {
-    const fruitCollection = firebase.firestore().collection("Microbes");
+    const fruitCollection = firebase.firestore().collection("Vegetable");
     const unsubscribe = fruitCollection.onSnapshot(getCollection);
     return () => {
       unsubscribe();
@@ -122,15 +122,15 @@ const Pthelp = ({navigation}) => {
           return (
             
             <TouchableOpacity style={styles.gridItem} key={i} 
-            onPress={()=>{navigation.navigate("ShowInfoHelp", 
+            onPress={()=>{navigation.navigate("ShowInfo", 
             {key:item.key, 
             name:item.name,
-            appearance:item.appearance,
-            pic:item.pic,
-            sci_name:item.sci_name,
-            time:item.time,
-            benefit:item.benefit,
-            type:item.type,
+            disease: item.disease,
+            cause: item.cause,
+            symptom: item.symptom,
+            prevention: item.prevention,
+            type: item.type,
+            pic: item.pic,
             bookmark: item.bookmark})}}>
               <View style={styles.tab}>
                 <TouchableOpacity
@@ -138,12 +138,12 @@ const Pthelp = ({navigation}) => {
                   onPress={() => (
                     updateBookmark(item.key,
                       item.name,
-                      item.appearance,
-                      item.pic,
-                      item.sci_name,
-                      item.time,
-                      item.benefit,
+                      item.disease,
+                      item.cause,
+                      item.symptom,
+                      item.prevention,
                       item.type,
+                      item.pic,
                       item.bookmark)
                   )}
                 >
@@ -156,11 +156,11 @@ const Pthelp = ({navigation}) => {
                   <Image source={item.pic} style={styles.img} />
                 </View>
                 <View style={styles.tab}>
-                  <Text style={{ fontSize: 20 }}>{item.name}</Text>
+                  <Text style={{ fontSize: 20 }}>{item.disease}</Text>
                   <br />
                   <Text style={styles.info1}>
                     {" "}
-                    <FontAwesome5 name="newspaper" /> {item.sci_name}{" "}
+                    <FontAwesome5 name="newspaper" /> {item.name}{" "}
                   </Text>
                 </View>
               </View>
@@ -231,4 +231,4 @@ const styles = StyleSheet.create({
 });
 
 
-export default Pthelp;
+export default Ptveg;

@@ -19,11 +19,37 @@ import Ptflowers from "../screen/Ptflowers";
 import Ptrice from "../screen/Ptrice";
 import Ptplant from "../screen/Ptplant";
 import Pthelp from "../screen/Pthelp";
+import Ptveg from "../screen/Ptveg";
+import Scan1 from "../screen/diagnose/Scan1";
+import Scan2 from "../screen/diagnose/Scan2";
+import Scan3 from "../screen/diagnose/Scan3";
+import Scan4 from "../screen/diagnose/Scan4";
+import Scan5 from "../screen/diagnose/Scan5";
+import Scan6 from "../screen/diagnose/Scan6";
+import Scan7 from "../screen/diagnose/Scan7";
+import Scan8 from "../screen/diagnose/Scan8";
+import Scan9 from "../screen/diagnose/Scan9";
+import Scan10 from "../screen/diagnose/Scan10";
+import Finish from "../screen/diagnose/Finish";
+import Finish1 from "../screen/diagnose/Finish1";
+import Finish2 from "../screen/diagnose/Finish2";
+import Finish3 from "../screen/diagnose/Finish3";
+import Finish4 from "../screen/diagnose/Finish4";
+import Finish5 from "../screen/diagnose/Finish5";
+import Weather from "../screen/Weather";
+import ContactDev from "../screen/ContactDev";
+import MenuDiag from "../screen/MenuDiag";
+import DVeg from "../screen/DVeg";
+import DRice from "../screen/DRice";
+import DFlowerer from "../screen/DFlowerer";
+import ShowInfoHelp from "../screen/ShowInfoHelp"
 
 const Tab = createBottomTabNavigator();
 const MainNavigation = createNativeStackNavigator();
 const MenuNavigation = createNativeStackNavigator();
 const MenuPNavigation = createNativeStackNavigator();
+const MenuDNavigation = createNativeStackNavigator();
+const DiagnoseNavigation = createNativeStackNavigator();
 
 
 function MenuNavigator() {
@@ -34,17 +60,21 @@ function MenuNavigator() {
     >
       <MenuNavigation.Screen name="Menu" component={Menu}/>
       <MenuNavigation.Screen name="NewsPage" component={NewsPage}/>
-      
       <MenuNavigation.Screen name="PtFromP" component={PtFromP}/>
       <MenuNavigation.Screen name="PtFromD2" component={PtFromD2}/>
       <MenuNavigation.Screen name="Ptflowers" component={Ptflowers}/>
       <MenuNavigation.Screen name="Ptrice" component={Ptrice}/>
       <MenuNavigation.Screen name="Ptplant" component={Ptplant}/>
       <MenuNavigation.Screen name="Pthelp" component={Pthelp}/>
+      <MenuNavigation.Screen name="Ptveg" component={Ptveg}/>
       <MenuNavigation.Screen name="ShowInfo" component={Showinfo}/>
-
       <MenuNavigation.Screen name="MenuProtect" component={MenuProtect}/>
+      <MenuNavigation.Screen name="MenuPNavigator" component={MenuPNavigator}/>
+      <MenuNavigation.Screen name="DiagnoseNavigator" component={DiagnoseNavigator}/>
+      <MenuNavigation.Screen name="MenuDNavigator" component={MenuDNavigator}/>
       <MenuNavigation.Screen name="AlertPage" component={AlertPage}/>
+      <MenuNavigation.Screen name="Weather" component={Weather}/>
+      <MenuNavigation.Screen name="ContactDev" component={ContactDev}/>
     </MenuNavigation.Navigator>
   );
 }
@@ -61,8 +91,27 @@ function MenuPNavigator() {
       <MenuPNavigation.Screen name="Ptflowers" component={Ptflowers}/>
       <MenuPNavigation.Screen name="Ptplant" component={Ptplant}/>
       <MenuPNavigation.Screen name="Pthelp" component={Pthelp}/>
+      <MenuPNavigation.Screen name="Ptveg" component={Ptveg}/>
       <MenuPNavigation.Screen name="ShowInfo" component={Showinfo}/>
+      <MenuPNavigation.Screen name="ShowInfoHelp" component={ShowInfoHelp}/>
     </MenuPNavigation.Navigator>
+  );
+}
+
+function MenuDNavigator() {
+  return (
+    <MenuDNavigation.Navigator
+      screenOptions={{ headerShown: false}}
+      initialRouteName="MenuDiagnostic"
+    >
+      <MenuDNavigation.Screen name="MenuDiag" component={MenuDiag}/>
+      <MenuDNavigation.Screen name="PtFromD2" component={PtFromD2}/>
+      <MenuDNavigation.Screen name="DVeg" component={DVeg}/>
+      <MenuDNavigation.Screen name="DRice" component={DRice}/>
+      <MenuDNavigation.Screen name="DFlowerer" component={DFlowerer}/>
+      <MenuDNavigation.Screen name="ShowInfo" component={Showinfo}/>
+      <MenuDNavigation.Screen name="ShowInfoHelp" component={ShowInfoHelp}/>
+    </MenuDNavigation.Navigator>
   );
 }
 
@@ -81,6 +130,31 @@ function MainNavigator() {
   );
 }
 
+function DiagnoseNavigator() {
+  return (
+    <DiagnoseNavigation.Navigator
+      screenOptions={{ headerShown: false}}
+      initialRouteName="Diagnose"
+    >
+      <DiagnoseNavigation.Screen name="Scan1" component={Scan1}/>
+      <DiagnoseNavigation.Screen name="Scan2" component={Scan2}/>
+      <DiagnoseNavigation.Screen name="Scan3" component={Scan3}/>
+      <DiagnoseNavigation.Screen name="Scan4" component={Scan4}/>
+      <DiagnoseNavigation.Screen name="Scan5" component={Scan5}/>
+      <DiagnoseNavigation.Screen name="Scan6" component={Scan6}/>
+      <DiagnoseNavigation.Screen name="Scan7" component={Scan7}/>
+      <DiagnoseNavigation.Screen name="Scan8" component={Scan8}/>
+      <DiagnoseNavigation.Screen name="Scan9" component={Scan9}/>
+      <DiagnoseNavigation.Screen name="Scan10" component={Scan10}/>
+      <DiagnoseNavigation.Screen name="Finish" component={Finish}/>
+      <DiagnoseNavigation.Screen name="Finish1" component={Finish1}/>
+      <DiagnoseNavigation.Screen name="Finish2" component={Finish2}/>
+      <DiagnoseNavigation.Screen name="Finish3" component={Finish3}/>
+      <DiagnoseNavigation.Screen name="Finish4" component={Finish4}/>
+      <DiagnoseNavigation.Screen name="Finish5" component={Finish5}/>
+    </DiagnoseNavigation.Navigator>
+  );
+}
 
 const styles = StyleSheet.create({
   icon: {
