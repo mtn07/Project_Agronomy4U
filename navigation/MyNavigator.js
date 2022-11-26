@@ -7,7 +7,6 @@ import Mainpage from "../screen/Main";
 import Menu from "../screen/Menu";
 import MenuProtect from "../screen/MenuProtect";
 import BookMark from "../screen/BookMark";
-import SettingPage from "../screen/SettingPage";
 import NewsWebsite from "../screen/NewsWebsite";
 import AlertPage from "../screen/Alert";
 import Contact from "../screen/Contact";
@@ -43,6 +42,9 @@ import DVeg from "../screen/DVeg";
 import DRice from "../screen/DRice";
 import DFlowerer from "../screen/DFlowerer";
 import ShowInfoHelp from "../screen/ShowInfoHelp"
+import SettingPage from "../screen/SettingPage";
+import HowtoPage from "../screen/HowtoPage";
+import AboutPage from "../screen/About";
 
 const Tab = createBottomTabNavigator();
 const MainNavigation = createNativeStackNavigator();
@@ -50,6 +52,7 @@ const MenuNavigation = createNativeStackNavigator();
 const MenuPNavigation = createNativeStackNavigator();
 const MenuDNavigation = createNativeStackNavigator();
 const DiagnoseNavigation = createNativeStackNavigator();
+const SettingNavigation = createNativeStackNavigator();
 
 
 function MenuNavigator() {
@@ -75,6 +78,7 @@ function MenuNavigator() {
       <MenuNavigation.Screen name="AlertPage" component={AlertPage}/>
       <MenuNavigation.Screen name="Weather" component={Weather}/>
       <MenuNavigation.Screen name="ContactDev" component={ContactDev}/>
+      <MenuNavigation.Screen name="HowtoPage" component={HowtoPage}/>
       <MenuNavigation.Screen name="ShowInfoHelp" component={ShowInfoHelp}/>
     </MenuNavigation.Navigator>
   );
@@ -127,8 +131,22 @@ function MainNavigator() {
       <MainNavigation.Screen name="News" component={NewsWebsite}/>
       <MainNavigation.Screen name="Contact" component={Contact}/>
       <MainNavigation.Screen name="ShowInfo" component={Showinfo}/>
+      <MainNavigation.Screen name="HowtoPage" component={HowtoPage}/>
       <MainNavigation.Screen name="ShowInfoHelp" component={ShowInfoHelp}/>
     </MainNavigation.Navigator>
+  );
+}
+
+function SettingNavigator() {
+  return (
+    <SettingNavigation.Navigator
+      screenOptions={{ headerShown: true}}
+      initialRouteName="Setting"
+    >
+      <SettingNavigation.Screen name="Setting" component={SettingPage} />
+      <SettingNavigation.Screen name="HowtoPage" component={HowtoPage}/>
+      <SettingNavigation.Screen name="AboutPage" component={AboutPage}/>
+    </SettingNavigation.Navigator>
   );
 }
 
@@ -185,7 +203,7 @@ export default function MyNavigator() {
       />
       <Tab.Screen
         name="Setting"
-        component={SettingPage}
+        component={SettingNavigator}
         options={{
           tabBarIcon: () => (
             <FontAwesome5 style={styles.icon} name="cog" />

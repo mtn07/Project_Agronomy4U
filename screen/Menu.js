@@ -29,7 +29,7 @@ const Menu = ({navigation}) => {
           );
         }}>
           <View style={styles.img1}>
-            <FontAwesome5 name="search" style={styles.img2}/>
+            <FontAwesome5 name="lightbulb" style={styles.img2}/>
           </View>
           <Text>เทคนิคอื่นๆ</Text>
         </TouchableOpacity>
@@ -76,7 +76,8 @@ const Menu = ({navigation}) => {
           </View>
           <Text>พยากรณ์อากาศ</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.box9}>
+        <TouchableOpacity style={styles.box9}
+        onPress={() => {navigation.navigate('HowtoPage')}}>
           <View style={styles.img1}>
             <FontAwesome5 name="info" style={styles.img2}/>
           </View>

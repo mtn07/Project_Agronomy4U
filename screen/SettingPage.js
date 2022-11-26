@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import { View, StyleSheet, TouchableOpacity, Text, Switch } from "react-native";
 
-const SettingPage = () => {
+const SettingPage = ({navigation}) => {
     const [isEnabled, setIsEnabled] = useState(false);
     const toggleSwitch = () => setIsEnabled(previousState => !previousState);
     return (
@@ -14,10 +14,12 @@ const SettingPage = () => {
                 onValueChange={toggleSwitch}
                 value={isEnabled}></Switch>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.gridItem}>
-                <Text style={styles.text1}> วิธีการใช้งาน </Text>
+            <TouchableOpacity style={styles.gridItem}
+            onPress={() => {navigation.navigate('HowtoPage')}}>
+                <Text style={styles.text1}> คำแนะนำการใช้งานแอป </Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.gridItem}>
+            <TouchableOpacity style={styles.gridItem}
+            onPress={() => {navigation.navigate('AboutPage')}}>
                 <Text style={styles.text1}> เกี่ยวกับ </Text>
             </TouchableOpacity>
         </View>

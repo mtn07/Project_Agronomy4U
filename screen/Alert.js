@@ -30,10 +30,14 @@ useEffect(async () => {
           setUsers(users);
           }
       )
+      return () => {
+        unsubscribe();
+      }
   }, [])
 
   return (
   <View style={{flex:1, marginTop:20}}>
+    <Text style={{fontSize: 20, textAlign: 'center', marginBottom: 10}}>พยากรณ์เตือนการระบาดศัตรูพืช</Text>
       <FlatList
       style={{height:'100%'}}
       data={users}

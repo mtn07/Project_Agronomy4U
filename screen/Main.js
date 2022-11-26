@@ -1,12 +1,16 @@
 import { FontAwesome5 } from "@expo/vector-icons";
 import React from "react";
-import { View, Text, TouchableOpacity, StyleSheet} from "react-native";
+import { View, Text, TouchableOpacity, StyleSheet, ScrollView} from "react-native";
 import Iframe from 'react-iframe'
 import { WebView } from 'react-native-webview';
+import { useFonts } from 'expo-font';
+import * as SplashScreen from 'expo-splash-screen';
 
 
 const Main = ({navigation}) => {
+    
     return (
+    <ScrollView>
     <View>
         <TouchableOpacity
             style={styles.gridItem}
@@ -52,6 +56,7 @@ const Main = ({navigation}) => {
                 </View>
         </TouchableOpacity>
     </View>
+    </ScrollView>
     );
 };
 

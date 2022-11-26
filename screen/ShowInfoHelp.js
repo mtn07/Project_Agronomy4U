@@ -27,7 +27,7 @@ const ShowInfoHelp = ({ route}) => {
                 <View><Text>{" "}</Text></View>
                 <Text style={styles.detailText}>  <b>ระยะที่ใช้ควบคุมศัตรูพืช  :</b> {time}  </Text>
                 <View><Text>{" "}</Text></View>
-                <Text style={styles.detailText}>  <b>การใช้ประโยชน :</b>  {benefit}  </Text>
+                <Text style={styles.detailText}>  <b>การใช้ประโยชน์ :</b>  {benefit}  </Text>
             <View><Text>{" "}</Text></View>
             <View><Text>{" "}</Text></View>
             </View>

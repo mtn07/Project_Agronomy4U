@@ -1,6 +1,7 @@
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import { StyleSheet} from 'react-native';
-import MyNavigator from "./navigation/MyNavigator"
+import MyNavigator from "./navigation/MyNavigator";
+import * as Font from 'expo-font';
 
 
 const MyTheme = {
